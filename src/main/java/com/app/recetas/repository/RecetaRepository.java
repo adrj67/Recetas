@@ -11,6 +11,9 @@ public interface RecetaRepository extends JpaRepository<Receta, Integer>{
     
     Optional<Receta> findByNombre(String nombre);
     boolean existsByNombre (String nombre);
+    
+    Optional<Receta> findByTipo(String tipo);
+    boolean existsByTipo (String tipo);
 
     // Agregado AUTOR
     public boolean existsByAutor(String autor); 

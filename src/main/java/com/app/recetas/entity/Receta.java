@@ -22,20 +22,29 @@ public class Receta {
     private String autor;
     @Column(name="nombre") 
     private String nombre;
+    @Column(name="rendimiento") 
+    private String rendimiento;
     @Column(name="ingredientes") 
     private String ingredientes;
     @Column(name="procedimiento") 
     private String procedimiento;
+    @Column(name="consejo") 
+    private String consejo;
 
     public Receta() {
     }
 
-    public Receta(String tipo, String autor, String nombre, String ingredientes, String procedimiento) {
+    public Receta(
+            String tipo, String autor, String nombre, String rendimiento, 
+            String ingredientes, String procedimiento, String consejo
+    ) {
         this.tipo = tipo;
         this.autor = autor;
         this.nombre = nombre;
+        this.rendimiento = rendimiento;
         this.ingredientes = ingredientes;
         this.procedimiento = procedimiento;
+        this.consejo = consejo;
     }
 
     public int getId() {
@@ -70,6 +79,14 @@ public class Receta {
         this.nombre = nombre;
     }
 
+    public String getRendimiento() {
+        return rendimiento;
+    }
+
+    public void setRendimiento(String rendimiento) {
+        this.rendimiento = rendimiento;
+    }
+
     public String getIngredientes() {
         return ingredientes;
     }
@@ -85,5 +102,14 @@ public class Receta {
     public void setProcedimiento(String procedimiento) {
         this.procedimiento = procedimiento;
     }
-    
+
+    public String getConsejo() {
+        return consejo;
+    }
+
+    public void setConsejo(String consejo) {
+        this.consejo = consejo;
+    }
+
+   
 }

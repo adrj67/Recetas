@@ -58,7 +58,10 @@ public class RecetaController {
         // Agregado AUTOR
        if (recetaService.existsByNombreAndAutor(recetaDto.getNombre(), recetaDto.getAutor())) {
             return new ResponseEntity(new Mensaje("Esa receta de ese autor ya existe"), HttpStatus.BAD_REQUEST);}
-        Receta receta = new Receta(recetaDto.getTipo(), recetaDto.getAutor(), recetaDto.getNombre(),  recetaDto.getIngredientes(), recetaDto.getProcedimiento());
+        Receta receta = new Receta(
+                recetaDto.getTipo(), recetaDto.getAutor(), recetaDto.getNombre(), recetaDto.getRendimiento(),
+                recetaDto.getIngredientes(), recetaDto.getProcedimiento(),recetaDto.getConsejo()
+        );
         recetaService.save(receta);
         return new ResponseEntity(new Mensaje("Receta creada"), HttpStatus.OK);
     }
@@ -77,8 +80,10 @@ public class RecetaController {
         receta.setTipo(recetaDto.getTipo());
         receta.setAutor(recetaDto.getAutor());
         receta.setNombre(recetaDto.getNombre());
+        receta.setRendimiento(recetaDto.getRendimiento());
         receta.setIngredientes(recetaDto.getIngredientes());
         receta.setProcedimiento(recetaDto.getProcedimiento());
+        receta.setConsejo(recetaDto.getConsejo());
         
         recetaService.save(receta);
         return new ResponseEntity(new Mensaje("Receta Actualizada"), HttpStatus.OK);

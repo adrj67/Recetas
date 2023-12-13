@@ -11,20 +11,27 @@ public class RecetaDto {
     private String autor;
     @NotBlank
     private String nombre;
+    private String rendimiento;
     private String ingredientes;
     private String procedimiento;
+    private String consejo;
     
     public RecetaDto() {
     }
 
-    public RecetaDto(String tipo, String autor, String nombre, String ingredientes, String procedimiento) {
+    public RecetaDto(
+            String tipo, String autor, String nombre, String rendimiento, 
+            String ingredientes, String procedimiento, String consejo
+    ) {
         this.tipo = tipo;
         this.autor = autor;
         this.nombre = nombre;
+        this.rendimiento = rendimiento;
         this.ingredientes = ingredientes;
         this.procedimiento = procedimiento;
+        this.consejo = consejo;
     }
-    
+
     public String getTipo() {
         return tipo;
     }
@@ -49,6 +56,14 @@ public class RecetaDto {
         this.nombre = nombre;
     }
 
+    public String getRendimiento() {
+        return rendimiento;
+    }
+
+    public void setRendimiento(String rendimiento) {
+        this.rendimiento = rendimiento;
+    }
+
     public String getIngredientes() {
         return ingredientes;
     }
@@ -63,6 +78,14 @@ public class RecetaDto {
 
     public void setProcedimiento(String procedimiento) {
         this.procedimiento = procedimiento;
-    }  
+    }
+
+    public String getConsejo() {
+        return consejo;
+    }
+
+    public void setConsejo(String consejo) {
+        this.consejo = consejo;
+    }
     
 }

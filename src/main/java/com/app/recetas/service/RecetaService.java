@@ -28,6 +28,10 @@ public class RecetaService {
         return recetaRepository.findByNombre(nombre);
     }
     
+    public Optional<Receta> getByTipo(String tipo){
+        return recetaRepository.findByTipo(tipo);
+    }
+    
     public void save(Receta receta){
         recetaRepository.save(receta);
     }
